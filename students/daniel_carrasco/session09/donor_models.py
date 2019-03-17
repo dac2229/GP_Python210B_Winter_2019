@@ -22,21 +22,4 @@ class Donor:
     def counter(self, val):
         ddb.Donor_Database(self.name).counter(val)
 
-    @staticmethod
-    def showallnames():
-        return [i for i in iter(ddb.Donor_Database.data)]
 
-    @staticmethod
-    def showalldonations():
-        return [ddb.Donor_Database.data[i][0]
-                for i in iter(ddb.Donor_Database.data)]
-
-    @staticmethod
-    def showallcounts():
-        return [ddb.Donor_Database.data[i][1]
-                for i in iter(ddb.Donor_Database.data)]
-
-    @staticmethod
-    def showavg():
-        return [ddb.Donor_Database.data[i][0] / ddb.Donor_Database.data[i][1]
-                for i in iter(ddb.Donor_Database.data)]

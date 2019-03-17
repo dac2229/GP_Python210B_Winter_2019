@@ -51,7 +51,7 @@ def thankyou():
                     3 - Enter New Name.\n\
                     4 - Quit submenu\n'))
             if choice == 1:
-                print(dm.Donor.showallnames())
+                print(ddb.Donor_Database.showallnames())
             if choice == 2:
                 key = input('Enter full name\n')
                 value = dm.Donor(key).donations
@@ -80,7 +80,7 @@ def get_report():
             'Donation ($)',
             'Amount',
             'Average ($)'))
-    print(dm.Donor.showavg())
+    print(ddb.Donor_Database.showavg())
     for key, value in ddb.Donor_Database.data.items():
         report_list.append(
             f'{key.title():>15}{value[0]:>15.2f}{value[1]:>15}{ddb.Donor_Database.data[key][0]/ddb.Donor_Database.data[key][1]:>15.2f}')
@@ -114,7 +114,7 @@ def addnew():
                     3 - Enter Donation.\n\
                     4 - Quit submenu\n'))
             if choice == 1:
-                print(dm.Donor.showallnames())
+                print(ddb.Donor_Database.showallnames())
             if choice == 2:
                 key = input('Enter full name\n')
                 dm.Donor(key).donations = 0

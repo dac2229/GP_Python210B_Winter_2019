@@ -26,3 +26,22 @@ class Donor_Database:
             current_donation = self.data[self.name][0]
             self.data.update({self.name: [current_donation, count]})
         return self.data[self.name][1]
+
+    @staticmethod
+    def showallnames():
+        return [i for i in iter(Donor_Database.data)]
+
+    @staticmethod
+    def showalldonations():
+        return [Donor_Database.data[i][0]
+                for i in iter(Donor_Database.data)]
+
+    @staticmethod
+    def showallcounts():
+        return [Donor_Database.data[i][1]
+                for i in iter(Donor_Database.data)]
+
+    @staticmethod
+    def showavg():
+        return [Donor_Database.data[i][0] / Donor_Database.data[i][1]
+                for i in iter(Donor_Database.data)]
